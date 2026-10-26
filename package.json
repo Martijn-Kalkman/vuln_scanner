@@ -1,0 +1,25 @@
+{
+  "name": "vuln-scanner",
+  "version": "1.0.0",
+  "description": "Scan npm dependencies for known vulnerabilities using OSV",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "vuln-scanner": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "echo \"Tests not configured yet\""
+  }
+}
