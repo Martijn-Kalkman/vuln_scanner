@@ -26,13 +26,13 @@ export async function queryOsv(
 
   const body: unknown = await response.json();
   if (!isRecord(body)) {
-    throw new Error('OSV response is not valid');
+    throw new TypeError('OSV response is not valid');
   }
   if (body.vulns === undefined) {
     return [];
   }
   if (!Array.isArray(body.vulns)) {
-    throw new Error('OSV response is not valid');
+    throw new TypeError('OSV response is not valid');
   }
   const vulns: Vulnerability[] = [];
   for (const item of body.vulns) {
